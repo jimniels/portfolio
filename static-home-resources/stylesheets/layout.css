@@ -1,0 +1,167 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+body {
+	font-size: 1em;
+	line-height: 1.3;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #c02702;
+}
+
+.header {
+	position: relative;
+	text-align: center;
+	padding: 10em 0;
+}
+.header h1{
+	font-family: 'Brawler', Georiga, serif;
+	font-size: 3.5em;
+	line-height: 1.15;
+}
+.header h1 span {
+	color: #c02702;
+}
+.header h2 {
+	font-size: 1.2em;
+	color: #777;
+	font-family: Arial;
+	line-height: 1.2;
+}
+.header h3 {
+	position: absolute;
+	top: 75px;
+	width: 250px;
+	left: 50%;
+	margin-left: -125px;
+	color: #999;
+	font-size: .8em;
+	font-family: Arial, sans-serif;
+}
+.header img {
+	position: absolute;
+	top: 20px;
+	border-radius: 50px;
+	display: block;
+	left: 50%;
+	margin-left: -32px;
+	box-shadow: 0 0 0 3px #eee;
+	display: block;
+	width: 60px;
+	height: 60px;
+}
+
+
+#dribbble li {
+	float: left;
+	border: 1px solid #eee;
+	margin-left: 15px;
+}
+#dribbble li:hover {
+	border-color: #c02702;
+}
+#dribbble li:first-child {
+	margin: 0;
+}
+#dribbble img {
+	width: 140px;
+	display: block;
+}
+
+.section header h1 {
+	font-size: 1.25em;
+	line-height: 1;
+	margin-bottom: 1.75em;
+	font-weight: 700;
+}
+.section header h1 a,
+.section header h1 strong {
+	color: #c02702;
+	letter-spacing: -1px;
+}
+.section {
+	padding-top: 2em;
+	border-top: 1px solid #eee;
+}
+.section li {
+	margin-bottom: 1.5em;
+}
+
+.published-articles span {
+	display: block;
+	color: #888;
+	font-style: italic;
+}
+
+
+footer p {
+	color: #777;
+	float: left;
+	margin-top: -1em;
+}
+footer p +p {
+	float:right;
+}
+
+/* #Page Styles
+================================================== */
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+		#dribbble li:last-child {
+			display: none;
+		}
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		.section {padding-bottom: 1em;}
+		#dribbble li {
+			margin: 0 20px 20px 0 !important;
+		}
+		.header {
+			padding: 4em 0;
+		}
+		.header h1 {
+			font-size: 2.75em;
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+		#dribbble {margin-bottom:1em;}
+		#dribbble li {
+			margin: 0 8px 12px 0 !important;
+		}
+		footer p {float: none !important}
+	}

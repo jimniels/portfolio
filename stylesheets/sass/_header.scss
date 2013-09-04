@@ -1,0 +1,44 @@
+.header {
+    text-align: center;
+    padding: 0 0 14em;
+    line-height: 1.1;
+
+    font-family: $font-family-header;
+}
+
+.header__logo {
+    padding: 5em 0;
+    a {
+        display: block;
+        width: 240px;
+        height: 120px;
+        background: url(../images/logo.png) no-repeat 0 0;
+        margin: 0 auto;
+        text-indent: -9999px;
+    }
+}
+
+.header__title {
+    font-size: #{60 / $font-size-base}em;
+    
+    //letter-spacing: -0.05em;
+    margin-bottom: .25em;
+
+    em {
+        color: $color-highlight;
+        //white-space: pre;
+    }
+}
+
+.header__subtitle {
+    font-weight: 300;
+    color: #444;
+    //font-size: #{21 / $font-size-base}em;
+
+    letter-spacing: .2em;
+    text-transform: uppercase;
+
+    a {
+        color: inherit;
+    }
+}

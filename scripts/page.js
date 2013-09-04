@@ -3,14 +3,14 @@ $(document).ready(function () {
     //
     // Dribbble Posts
     //
-    var html = '';
-    $.getJSON("http://dribbble.com/jimniels/shots.json?callback=?", function(data){
-        $.each(data.shots, function(i,shot){
-            if (i < 4)
-                html += '<li><a href="'+shot.url+'"><img src="'+shot.image_teaser_url+'" /></a></li>';
-        });
-        $('#dribbble').html(html);
-    });
+    // var html = '';
+    // $.getJSON("http://dribbble.com/jimniels/shots.json?callback=?", function(data){
+    //     $.each(data.shots, function(i,shot){
+    //         if (i < 4)
+    //             html += '<li><a href="'+shot.url+'"><img src="'+shot.image_teaser_url+'" /></a></li>';
+    //     });
+    //     $('#dribbble').html(html);
+    // });
         
 });
 

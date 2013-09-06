@@ -1,39 +1,79 @@
 $(document).ready(function () {     
     
+
     //
-    // Dribbble Posts
     //
-    var html = '';
+    //  Sections
+    //
+    function Section(config) {
+
+        this.$target = config.$target;
+        this.$template = config.$template;
+        this.data = {};
+
+        this.renderError = function() {
+            this.$target.html('Data could not be loaded');
+        },
+
+        this.render = function() {
+            var template = Handlebars.compile( this.$template.html() );
+            this.$target.html( template( this.data ) );
+        }
+    };
+
+    //
+    //
+    //  Define Objects
+    //
+    Dribbble = new Section({
+        $target: $('#dribbble'),
+        $template: $('#template-dribbble')
+    });
+    PublishedArticles = new Section({
+        $target: $('#published-articles'),
+        $template: $('#template-published-articles')
+    });
+
+
+    //
+    //
+    //  Execute Ajax Calls
+    //
+
+    //
+    //
+    // Dribbble 
+    //
     $.getJSON("http://dribbble.com/jimniels/shots.json?callback=?", function(data){
-        $.each(data.shots, function(i,shot){
-            if (i < 2)
-                html += '<li><a href="'+shot.url+'"><img src="'+shot.image_url+'" /></a></li>';
-        });
-        $('#dribbble').html(html);
+
+        // Temp variable for trimming results down to two
+        var dataTmp = { shots: [] };
+        for($i=0;$i<2;$i++) {
+            dataTmp.shots.push( data.shots[$i] );
+        } 
+
+        Dribbble.data = dataTmp;
+        Dribbble.render();
+
     });
 
-
+    //
+    //
+    //  Published Articles
+    //
     $.getJSON('json/published-articles.json', function(data){
-        console.log(data);
-        var html = '';
-        for (var i = 0; i< data.length; i++) {
-            html += '<li><a href="'+data[i].link+'">'+data[i].title+'</a><time class="meta">date</time></li>';
-        };
-        $('#published-articles').html(html);
-    }).done(function(){
-
-    }).fail(function(){
-
+        PublishedArticles.data = data;
+        PublishedArticles.render();
     });
+
+    
         
 });
-
 
 /* creates a feed instance and loads the feed */
 function OnLoad() {
     var feed = new google.feeds.Feed("http://scriptogr.am/jimniels/feed/");
     feed.load(feedLoaded);
-
 }
 
 /* when the feed is loaded */
@@ -67,7 +107,7 @@ function feedLoaded(result) {
             month_names[month_names.length] = "November";
             month_names[month_names.length] = "December";
 
-            html += '<li><a href="'+entry.link+'">'+entry.title+'</a><time class="meta">'+ month_names[curr_month] + ' ' + curr_date + ', ' + curr_year + '</time></li>';
+            html += '<li><h2><a href="'+entry.link+'">'+entry.title+'</a></h2><p><time class="meta">'+ month_names[curr_month] + ' ' + curr_date + ', ' + curr_year + '</time></p></li>';
                         
             $('#blog').html( html );
         }

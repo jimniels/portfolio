@@ -62,21 +62,19 @@ img {
 
     h1 {
         font-weight: 700;
-    }
-    h2 {
-        font-size: #{13 / $font-size-base}em;
+        margin-top: .3125em;
     }
     a {
         color: inherit;
     }
     .icon {
         float: left;
-        font-size: 2em;
+        font-size: 1.5em;
         margin-right: .25em;
     }
 }
 .section__content {
-    padding-top: 1em;
+    padding-top: 1.325em;
     margin-bottom: 2em;
 
     li {
@@ -85,10 +83,6 @@ img {
 
     a {
         color: inherit;
-    }
-
-    time {
-        display: block;
     }
 }
 

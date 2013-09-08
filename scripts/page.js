@@ -33,6 +33,10 @@ $(document).ready(function () {
         $target: $('#published-articles'),
         $template: $('#template-published-articles')
     });
+    SideProjects = new Section({
+        $target: $('#side-projects'),
+        $template: $('#template-side-projects')
+    });
 
 
     //
@@ -44,26 +48,36 @@ $(document).ready(function () {
     //
     // Dribbble 
     //
-    $.getJSON("http://dribbble.com/jimniels/shots.json?callback=?", function(data){
+    // $.getJSON("http://dribbble.com/jimniels/shots.json?callback=?", function(data){
 
-        // Temp variable for trimming results down to two
-        var dataTmp = { shots: [] };
-        for($i=0;$i<2;$i++) {
-            dataTmp.shots.push( data.shots[$i] );
-        } 
+    //     // Temp variable for trimming results down to two
+    //     var dataTmp = { shots: [] };
+    //     for($i=0;$i<2;$i++) {
+    //         dataTmp.shots.push( data.shots[$i] );
+    //     } 
 
-        Dribbble.data = dataTmp;
-        Dribbble.render();
+    //     Dribbble.data = dataTmp;
+    //     Dribbble.render();
 
-    });
+    // });
 
     //
     //
     //  Published Articles
     //
-    $.getJSON('json/published-articles.json', function(data){
-        PublishedArticles.data = data;
-        PublishedArticles.render();
+    // $.getJSON('json/published-articles.json', function(data){
+    //     PublishedArticles.data = data;
+    //     PublishedArticles.render();
+    // });
+
+    //
+    //
+    //  Side Projects
+    //
+    $.getJSON('json/side-projects.json', function(data){
+        console.log(data);
+        SideProjects.data = data;
+        SideProjects.render();
     });
 
     
@@ -72,8 +86,8 @@ $(document).ready(function () {
 
 /* creates a feed instance and loads the feed */
 function OnLoad() {
-    var feed = new google.feeds.Feed("http://scriptogr.am/jimniels/feed/");
-    feed.load(feedLoaded);
+    //var feed = new google.feeds.Feed("http://scriptogr.am/jimniels/feed/");
+    //feed.load(feedLoaded);
 }
 
 /* when the feed is loaded */

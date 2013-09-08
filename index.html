@@ -26,7 +26,6 @@
     <![endif]-->
 
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 
 
 </head>
@@ -48,8 +47,9 @@
             <article class="section">
                 
                 <header class="l-left section__header">
-                    <span class="icon icon-scriptogram"></span>
-                    <h1><a href="http://scriptogr.am/jimniels">Blog</a></h1>
+                    <h1>
+                        <a class="icon icon-scriptogram" href="http://scriptogr.am/jimniels" title="Jim Nielsen on Scriptogram">Blog</a>
+                    </h1>
                 </header>
                 
                 <ul class="l-right section__content" id="blog">
@@ -64,8 +64,9 @@
             <article class="clearfix section">
             
                 <header class="l-left section__header">
-                    <span class="icon icon-dribbble"></span>
-                    <h1><a href="http://dribbble.com/jimniels/">Dribbble</a></h1>
+                    <h1>
+                        <a class="icon icon-dribbble" href="http://dribbble.com/jimniels/">Dribbble</a>
+                    </h1>
                 </header>
                 
                 <ul class="l-right section__content" id="dribbble">
@@ -73,7 +74,7 @@
 
                     <script id="template-dribbble" type="text/x-handlebars-template">
                     {{#each shots}}
-                        <li>
+                        <li class="col">
                             <a href="{{url}}">
                                 <img src="{{image_400_url}}" alt="{{title}}" />
                             </a>
@@ -90,8 +91,7 @@
             <article class="clearfix section">
             
                 <header class="l-left section__header">
-                    <span class="icon icon-published-articles"></span>
-                    <h1>Published Articles</h1>
+                    <h1 class="icon icon-published-articles">Published Articles</h1>
                 </header>
                 
                 <ul class="l-right section__content" id="published-articles">
@@ -117,19 +117,33 @@
 
             <!-- Side Projects 
             =================================  -->
-    <!--         <article class="clearfix section">
-                
-                <header class="one-third column alpha">
-                    <h1>Recent <strong>Projects</strong></h1>
+            <article class="clearfix section">
+            
+                <header class="l-left section__header">
+                    <h1 class="icon icon-side-projects">Side Projects</h1>
                 </header>
                 
-                <ul class="two-thirds column omega" id="blog">
-                    <li><a href="http://kindlingapp.com">Kindlingapp.com</a>
-                    <li><a href="http://blog.arc90.com/2012/09/18/announcing-sassme/">SassMe</a></li>
-                    <li><a href="http://lab.arc90.com/hackathon/2012/#team-colors">Team Colors</a></li>
+                <ul class="l-right section__content" id="side-projects">
+                    <li>Loading recent side projects</li>
+
+                    <script id="template-side-projects" type="text/x-handlebars-template">
+                    {{#each side-projects}}
+                        <li>
+                            <a href="{{link}}" class="col">
+                                <img src="http://lorempixel.com/400/300" />
+                            </a>
+                            <div class="col">
+                                <h2 class="bold">{{title}} <a class="meta" href="{{link}}">{{link}}</a></h2>
+                                <p>{{description}}</p>
+                                <a href="{{cta}}" class="highlight">View the case study &raquo;</a>
+                            </div>
+                            
+                        </li>
+                    {{/each}}
+                    </script>
                 </ul>
                     
-            </article> -->
+            </article>
 
         </section>
 

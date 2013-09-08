@@ -15,11 +15,16 @@
 }
 body {
     background: $color-background;
-    font: 1em/1.5 #{$font-family-base};
+    font: 1em/1.25 #{$font-family-base};
 }
 
 a {
     text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: $color-highlight;
+    }
 }
 
 img {
@@ -50,6 +55,9 @@ img {
     border-top: 1px solid #e9e9e9;
     clear: both;
     margin-top: 1em;
+    font-weight: 300;
+
+    font-size: #{18 / $font-size-base}em;
 }
 
 .section__header {
@@ -64,13 +72,12 @@ img {
         font-weight: 700;
         margin-top: .3125em;
     }
-    a {
-        color: inherit;
-    }
-    .icon {
-        float: left;
+
+    .icon:before {
         font-size: 1.5em;
         margin-right: .25em;
+        position: relative;
+        top: .15em;
     }
 }
 .section__content {
@@ -80,10 +87,6 @@ img {
     li {
         margin-bottom: 1em;
     }
-
-    a {
-        color: inherit;
-    }
 }
 
 .meta {
@@ -91,15 +94,45 @@ img {
     color: #999;
 }
 
+.block {
+    display: block;
+}
+
 .bold {
     font-weight: 700;
 }
 
-#dribbble {
-    li {
+.highlight {
+    color: $color-highlight;
+}
+
+.col {
         width: 46%;
         margin-right: 2%;
         float: left;
-        
+}
+
+#side-projects {
+
+    li {
+        overflow: hidden;
+    }
+
+    .bold {
+        font-weight: 400;
+    }
+
+    div.col {
+        margin-top: 1em;
+    }
+    .meta {
+        display: block;
+        font-weight: normal;
+    }
+
+    p {
+        color: $color-text-light;
+        margin: 1em 0;
+        font-size: #{$font-size-base / 18}em;
     }
 }

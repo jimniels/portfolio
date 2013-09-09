@@ -76,7 +76,11 @@
                     {{#each shots}}
                         <li class="col">
                             <a href="{{url}}">
-                                <img src="{{image_400_url}}" alt="{{title}}" />
+                                {{#if image_400_url}}
+                                    <img src="{{image_400_url}}" alt="{{title}}" />
+                                {{else}}
+                                     <img src="{{image_url}}" alt="{{title}}" />
+                                {{/if}}
                             </a>
                         </li>
                     {{/each}}
@@ -130,13 +134,15 @@
                     {{#each side-projects}}
                         <li>
                             <a href="{{link}}" class="col">
-                                <img src="http://lorempixel.com/400/300" />
+                                <img src="images/{{filenameify title}}.png" />
                             </a>
                             <div class="col">
-                                <h2 class="bold">{{title}} <a class="meta" href="{{link}}">{{link}}</a></h2>
+                                <a href="{{link}}">
+                                    <h2 class="bold">{{title}}</h2>
+                                    <span class="meta">{{link-pretty}}</span>
+                                </a>
                                 <p>{{description}}</p>
-                                <a href="{{cta}}" class="highlight">View the case study &raquo;</a>
-                            </div>
+                            </a>
                             
                         </li>
                     {{/each}}

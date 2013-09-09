@@ -3,14 +3,34 @@
         {
             "title":            "iOS Icon Gallery",
             "link":             "http://iosicongallery.com",
+            "link-pretty":      "iosicongallery.com",
             "description":      "A gallery showcasing great icon designs from the iOS ecosystem. Designed and curated by muah.",
             "cta":              "http://google.com"
         },
         {
             "title":            "SassMe",
             "link":             "http://sassme.arc90.com",
+            "link-pretty":      "sassme.arc90.com",
             "description":      "Visualize the result of Sass color functions in real-time without compiling; a tool spawned and created in the Arc90 Lab.",
             "cta":              "http://google.com"
+        },
+        {
+            "title":            "Team Colors",
+            "link":             "http://teamcolors.arc90.com",
+            "link-pretty":      "teamcolors.arc90.com",
+            "description":      "A reference for finding the team colors of your favorite major league sports teams.",
+            "cta":              "http://google.com"
+        },
+        {
+            "title":            "CSS Off 2012",
+            "link":             "http://unmatchedstyle.com/news/cssoff-winners-2012.php",
+            "link-pretty":      "unmatchedstyle.com",
+            "description":      "I placed amongst the finalists in a global web design competition by Unmatched Style. Entrants were given a design and provided two weeks to code it. Each entry was then meticulously judged by industry-renowned experts, including Chris Coyier and Ethan Marcotte, on criteria such as code cleanliness, validation, interactions, project size, browser support, and responsiveness.",
+            "cta":              "http://google.com"
         }
+
+
+
+        
     ]
 }

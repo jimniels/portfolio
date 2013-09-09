@@ -34,21 +34,45 @@ img {
 
 .l-wrapper {
     width: 90%;
-    padding: 0 5em; 
+    padding: 0 5%; 
     margin: 3em auto 6em;
     max-width: 1120px; // 5em * 16 = 80, 80*2=160px, 960px+160=1120
     background: white;
     @include border-radius(3px);
     @include box-shadow(0 0 130px rgba(0,0,0,1));
+
+    @media screen and (max-width: 800px) {
+        width: 85%;
+        padding: 0 7.5%;
+        float: none;
+        margin-top: 1.5em;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        padding: 0 5%;
+        float: none;
+        margin-top: 0;
+    }
 }
 
 .l-left {
     width: 25%;
     float: left;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        float: none
+    }
 }
 .l-right {
     width: 72%;
     float: right;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        float: none
+    }
 }
 
 .section {
@@ -107,9 +131,15 @@ img {
 }
 
 .col {
-        width: 46%;
-        margin-right: 2%;
-        float: left;
+    width: 46%;
+    margin-right: 2%;
+    float: left;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
 }
 
 #side-projects {
@@ -124,7 +154,16 @@ img {
 
     div.col {
         margin-top: 1em;
+
+        @media screen and (max-width: 900px) {
+            margin-top: 0;
+        }
+
+        a:hover {
+            color: $color-highlight;
+        }
     }
+
     .meta {
         display: block;
         font-weight: normal;
@@ -132,7 +171,7 @@ img {
 
     p {
         color: $color-text-light;
-        margin: 1em 0;
+        margin: .25em 0;
         font-size: #{$font-size-base / 18}em;
     }
 }

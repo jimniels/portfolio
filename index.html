@@ -53,7 +53,7 @@
                 </header>
                 
                 <ul class="l-right section__content" id="blog">
-                    <li>Loading recent blog posts</li>
+                    <li><img src="images/loading.gif" alt="Loading..." class="loading" /> Loading recent blog posts</li>
                 </ul>
                     
             </article>
@@ -70,11 +70,11 @@
                 </header>
                 
                 <ul class="l-right section__content" id="dribbble">
-                    <li>Loading recent dribbbles</li>
+                    <li><img src="images/loading.gif" alt="Loading..." class="loading" /> Loading recent dribbbles</li>
 
                     <script id="template-dribbble" type="text/x-handlebars-template">
                     {{#each shots}}
-                        <li class="col">
+                        <li class="l-col">
                             <a href="{{url}}">
                                 {{#if image_400_url}}
                                     <img src="{{image_400_url}}" alt="{{title}}" />
@@ -104,13 +104,16 @@
                     <script id="template-published-articles" type="text/x-handlebars-template">
                     {{#each published-articles}}
                         <li>
-
-                            <h2><a href="{{link}}">{{title}}</a></h2>
-                            <p class="meta">
-                                <a href="{{publisher-link}}">{{publisher}}</a> &middot;
-                                <time>{{publish-date}}</time>
-                            </p>
-                            
+                            <a href="{{link}}">
+                                <h2>{{title}}</h2>
+                                <p class="meta">
+                                    <span>{{publisher}}</span> &middot;
+                                    <time>{{publish-date}}</time>
+                                    {{#if reader-fav}}
+                                        &middot; <span class="readers-fav">readers’ fav</span>
+                                    {{/if}}
+                                </p>
+                            </a>
                         </li>
                     {{/each}}
                     </script>
@@ -124,7 +127,7 @@
             <article class="clearfix section">
             
                 <header class="l-left section__header">
-                    <h1 class="icon icon-side-projects">Side Projects</h1>
+                    <h1 class="icon icon-hammer">Side Projects</h1>
                 </header>
                 
                 <ul class="l-right section__content" id="side-projects">
@@ -133,15 +136,16 @@
                     <script id="template-side-projects" type="text/x-handlebars-template">
                     {{#each side-projects}}
                         <li>
-                            <a href="{{link}}" class="col">
+                            <a href="{{link}}" class="l-col">
                                 <img src="images/{{filenameify title}}.png" />
                             </a>
-                            <div class="col">
+                            <div class="l-col">
                                 <a href="{{link}}">
                                     <h2 class="bold">{{title}}</h2>
                                     <span class="meta">{{link-pretty}}</span>
                                 </a>
                                 <p>{{description}}</p>
+                                {{#if cta}}<p><a href="{{cta}}" class="highlight">Project overview &raquo;</a></p>{{/if}}
                             </a>
                             
                         </li>
@@ -153,7 +157,7 @@
 
         </section>
 
-        <footer class="sixteen columns clearfix section">
+        <footer class="clearfix section">
             <p>Jim Nielsen, 2013</p>
             <p>Contact me via <a href="http://twitter.com/jimniels">twitter</a> or <a href="mailto:jimniels@gmail.com">email</p>
         </footer>

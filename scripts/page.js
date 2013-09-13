@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {     
     
 
@@ -23,7 +25,7 @@ $(document).ready(function () {
 
     //
     //
-    //  Define Objects
+    //  Define 
     //
     Dribbble = new Section({
         $target: $('#dribbble'),
@@ -55,7 +57,6 @@ $(document).ready(function () {
         for($i=0;$i<2;$i++) {
             dataTmp.shots.push( data.shots[$i] );
         } 
-        console.log(dataTmp);
         Dribbble.data = dataTmp;
         Dribbble.render();
 
@@ -75,14 +76,14 @@ $(document).ready(function () {
     //  Side Projects
     //
     $.getJSON('json/side-projects.json', function(data){
-        console.log(data);
         SideProjects.data = data;
         SideProjects.render();
     });
-
-    
         
 });
+
+
+
 
 //
 //
@@ -101,7 +102,7 @@ function OnLoad() {
 
 /* when the feed is loaded */
 function feedLoaded(result) {
-    
+
     if (!result.error) {
 
         var html = '';

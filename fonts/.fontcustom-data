@@ -6,19 +6,16 @@
     "custom-font.svg"
   ],
   "glyphs": [
-    "arrow-down",
-    "arrow-up",
-    "clock",
     "dribbble",
     "frown",
     "github",
+    "hammer",
     "instagram",
     "menu",
     "published-articles",
     "readability",
     "scriptogram",
-    "twitter",
-    "yelp"
+    "twitter"
   ],
   "templates": [
     "_fontcustom.scss"

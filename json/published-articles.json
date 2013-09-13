@@ -2,6 +2,16 @@
     "published-articles": [
         {
             "id":               "published-articles",
+            "title":            "Quick Tip: Name Your SASS Variables Modularly",
+            "publisher":        "webdesign tuts+",
+            "publisher-link":   "http://webdesign.tutsplus.com/",
+            "publish-date":     "Jul 2, 2013",
+            "date":             1372723200,
+            "link":             "http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/",
+            "excerpt":          "You should think about organizing your variable names (and project for that matter) modularly. This will bring structure and unity to your project as a whole, making it easier to understand and navigate the whole thing."
+        },
+        {
+            "id":               "published-articles",
             "title":            "Filler Content: Tools, Tips and a Dynamic Example",
             "publisher":        "webdesign tuts+",
             "publisher-link":   "http://webdesign.tutsplus.com/",
@@ -28,7 +38,7 @@
             "publish-date":     "Jan. 2, 2013",
             "date":             1357084800,
             "link":             "http://webdesign.tutsplus.com/tutorials/site-elements/bring-your-forms-up-to-date-with-css3-and-html5-validation/",
-            "flag":             "Reader’s Fav",
+            "reader-fav":       true,
             "excerpt":          "Let’s look at how to create a functional form which validates users’ data, client-side. With that done, we’ll cover prettying it up using CSS, including some CSS3!"
         },
         {
@@ -89,7 +99,7 @@
             "publish-date":     "Aug. 9, 2012",
             "date":             1344470400,
             "link":             "http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/super-simple-lightbox-with-css-and-jquery/",
-            "flag":             "Reader’s Fav",
+            "reader-fav":       true,
             "excerpt":          "Rather than using a bloated plugin that has features you’ll never use, this tutorial shows you how to create a super simple lightbox for handling images. It’s perfect for image galleries, portfolios, and more!"
         },
         {
@@ -100,7 +110,7 @@
             "publish-date":     "Jun. 8, 2012",
             "date":             1339113600,
             "link":             "http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/perfectly-rotate-and-mask-thumbnails-with-css3/",
-            "flag":             "Reader’s Fav",
+            "reader-fav":       true,
             "excerpt":          "Ever seen a website showcasing image thumbnails that are slightly rotated? It’s a simple effect that adds a layer of visual personality. Saying that, if you’re not achieving the rotation effect with CSS, you’re working too hard! Learn how to do it right!"
         },
         {

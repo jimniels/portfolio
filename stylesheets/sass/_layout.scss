@@ -1,0 +1,55 @@
+.l-wrapper {
+    width: 90%;
+    padding: 0 5%; 
+    margin: 3em auto 6em;
+    max-width: 1120px; // 5em * 16 = 80, 80*2=160px, 960px+160=1120
+    background: white;
+    @include border-radius(3px);
+    @include box-shadow(0 0 130px rgba(0,0,0,1));
+
+    @media screen and (max-width: 800px) {
+        width: 95%;
+        padding: 0 5%;
+        float: none;
+        margin-top: 1.5em;
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        padding: 0 5%;
+        float: none;
+        margin-top: 0;
+    }
+}
+
+.l-left {
+    width: 25%;
+    float: left;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        float: none
+    }
+}
+.l-right {
+    width: 72%;
+    float: right;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        float: none
+    }
+}
+
+.l-col {
+    width: 46%;
+    margin-right: 2%;
+    float: left;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+}

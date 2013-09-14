@@ -66,7 +66,7 @@ $(document).ready(function () {
     //
     //  Published Articles
     //
-    $.getJSON('json/published-articles.json', function(data){
+    $.getJSON('resources/json/published-articles.json', function(data){
         PublishedArticles.data = data;
         PublishedArticles.render();
     });
@@ -75,7 +75,7 @@ $(document).ready(function () {
     //
     //  Side Projects
     //
-    $.getJSON('json/side-projects.json', function(data){
+    $.getJSON('resources/json/side-projects.json', function(data){
         SideProjects.data = data;
         SideProjects.render();
     });

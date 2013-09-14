@@ -19,7 +19,7 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="resources/stylesheets/style.css">
 
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,7 +32,7 @@
 
 <body>
 
-    <div class="l-wrapper">
+    <div class="l-wrapper main">
 
         <header class="header">
             <h1 class="header__logo"><a href="/">Jim Nielsen</a></h1>
@@ -53,7 +53,7 @@
                 </header>
                 
                 <ul class="l-right section__content" id="blog">
-                    <li><img src="images/loading.gif" alt="Loading..." class="loading" /> Loading recent blog posts</li>
+                    <li><img src="resources/images/loading.gif" alt="Loading..." class="loading" /> Loading recent blog posts</li>
                 </ul>
                     
             </article>
@@ -61,7 +61,7 @@
 
             <!-- Dribbble 
             =================================  -->
-            <article class="clearfix section">
+            <article class="section">
             
                 <header class="l-left section__header">
                     <h1>
@@ -70,7 +70,7 @@
                 </header>
                 
                 <ul class="l-right section__content" id="dribbble">
-                    <li><img src="images/loading.gif" alt="Loading..." class="loading" /> Loading recent dribbbles</li>
+                    <li><img src="resources/images/loading.gif" alt="Loading..." class="loading" /> Loading recent dribbbles</li>
 
                     <script id="template-dribbble" type="text/x-handlebars-template">
                     {{#each shots}}
@@ -92,7 +92,7 @@
 
             <!-- Published Articles 
             =================================  -->
-            <article class="clearfix section">
+            <article class="section">
             
                 <header class="l-left section__header">
                     <h1 class="icon icon-published-articles">Published Articles</h1>
@@ -104,16 +104,14 @@
                     <script id="template-published-articles" type="text/x-handlebars-template">
                     {{#each published-articles}}
                         <li>
-                            <a href="{{link}}">
-                                <h2>{{title}}</h2>
-                                <p class="meta">
-                                    <span>{{publisher}}</span> &middot;
-                                    <time>{{publish-date}}</time>
-                                    {{#if reader-fav}}
-                                        &middot; <span class="readers-fav">readers’ fav</span>
-                                    {{/if}}
-                                </p>
-                            </a>
+                            <h2><a href="{{link}}">{{title}}</a></h2>
+                            <p class="meta">
+                                <span>{{publisher}}</span> &middot;
+                                <time>{{publish-date}}</time>
+                                {{#if reader-fav}}
+                                    &middot; <span class="readers-fav">readers’ fav</span>
+                                {{/if}}
+                            </p>
                         </li>
                     {{/each}}
                     </script>
@@ -124,7 +122,7 @@
 
             <!-- Side Projects 
             =================================  -->
-            <article class="clearfix section">
+            <article class="section">
             
                 <header class="l-left section__header">
                     <h1 class="icon icon-hammer">Side Projects</h1>
@@ -137,7 +135,7 @@
                     {{#each side-projects}}
                         <li>
                             <a href="{{link}}" class="l-col">
-                                <img src="images/{{filenameify title}}.png" />
+                                <img src="resources/images/{{filenameify title}}.png" />
                             </a>
                             <div class="l-col">
                                 <a href="{{link}}">
@@ -155,33 +153,34 @@
                     
             </article>
 
+            <div class="clearfix"></div>
         </section>
-
-        <footer class="clearfix section">
-            <p>Jim Nielsen, 2013</p>
-            <p>Contact me via <a href="http://twitter.com/jimniels">twitter</a> or <a href="mailto:jimniels@gmail.com">email</p>
-        </footer>
     </div>
 
+    <footer class="l-wrapper footer">
+        <p class="left"><a href="mailto:jimniels@gmail.com">jimniels@gmail.com</a></p>
+        <p class="right"><a href="http://twitter.com/jimniels">@jimniels</a></p>
+    </footer>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
-<script src="scripts/handlebars.js" type="text/javascript"></script>
-<script src="scripts/page.js" type="text/javascript"></script>
 
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script src="resources/scripts/handlebars.js" type="text/javascript"></script>
+    <script src="resources/scripts/page.js" type="text/javascript"></script>
+
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
     // //
     // // Analytics
     // //
-    // var _gaq = _gaq || [];
-    // _gaq.push(['_setAccount', 'UA-19579223-1']);
-    // _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19579223-1']);
+    _gaq.push(['_trackPageview']);
 
-    // (function() {
-    // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    // })();
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
     // // 
     // // Get Scriptogram Posts

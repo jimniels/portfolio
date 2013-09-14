@@ -49,3 +49,8 @@ img {
 .highlight {
     color: $color-highlight;
 }
+
+.clearfix {
+    @include clearfix;
+    clear: both;
+}

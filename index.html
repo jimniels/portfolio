@@ -52,8 +52,17 @@
                     </h1>
                 </header>
                 
-                <ul class="l-right section__content" id="blog">
+                <ul class="l-right section__content" id="scriptogram">
                     <li><img src="resources/images/loading.gif" alt="Loading..." class="loading" /> Loading recent blog posts</li>
+
+                    <script id="template-scriptogram" type="text/x-handlebars-template">
+                    {{#each this}}
+                        <li>
+                            <h2><a href="{{link}}">{{title}}</a></h2>
+                            <p><time class="meta">{{prettyDate pubDate}}</time></p>
+                        </li>
+                    {{/each}}
+                    </script>
                 </ul>
                     
             </article>
@@ -73,7 +82,7 @@
                     <li><img src="resources/images/loading.gif" alt="Loading..." class="loading" /> Loading recent dribbbles</li>
 
                     <script id="template-dribbble" type="text/x-handlebars-template">
-                    {{#each shots}}
+                    {{#each this}}
                         <li class="l-col">
                             <a href="{{url}}">
                                 {{#if image_400_url}}
@@ -99,10 +108,10 @@
                 </header>
                 
                 <ul class="l-right section__content" id="published-articles">
-                    <li>Loading recently published articles</li>
+                    <li><img src="resources/images/loading.gif" alt="Loading..." class="loading" />Loading recently published articles</li>
 
                     <script id="template-published-articles" type="text/x-handlebars-template">
-                    {{#each published-articles}}
+                    {{#each this}}
                         <li>
                             <h2><a href="{{link}}">{{title}}</a></h2>
                             <p class="meta">
@@ -129,10 +138,10 @@
                 </header>
                 
                 <ul class="l-right section__content" id="side-projects">
-                    <li>Loading recent side projects</li>
+                    <li><img src="resources/images/loading.gif" alt="Loading..." class="loading" />Loading recent side projects</li>
 
                     <script id="template-side-projects" type="text/x-handlebars-template">
-                    {{#each side-projects}}
+                    {{#each this}}
                         <li>
                             <a href="{{link}}" class="l-col">
                                 <img src="resources/images/{{filenameify title}}.png" />
@@ -186,8 +195,8 @@
     // // Get Scriptogram Posts
     // // Functions defined in page.js
     // //
-    google.load("feeds", "1");
-    google.setOnLoadCallback(OnLoad);
+    // google.load("feeds", "1");
+    // google.setOnLoadCallback(OnLoad);
 </script>
 
 </body>

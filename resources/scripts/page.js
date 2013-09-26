@@ -1,50 +1,30 @@
 
+//
+//
+//  Section Class
+//
+function Section(config) {
 
-$(document).ready(function () {     
-    
+    this.$target = config.$target;
+    this.$template = config.$template;
+    this.data = config.data;
 
-    //
-    //
-    //  Sections
-    //
-    function Section(config) {
+    this.renderError = function() {
+        this.$target.html('Data could not be loaded');
+    },
 
-        this.$target = config.$target;
-        this.$template = config.$template;
-        this.data = {};
-
-        this.renderError = function() {
-            this.$target.html('Data could not be loaded');
-        },
-
-        this.render = function() {
-            var template = Handlebars.compile( this.$template.html() );
-            this.$target.html( template( this.data ) );
-        }
-    };
-
-    //
-    //
-    //  Define 
-    //
-    Dribbble = new Section({
-        $target: $('#dribbble'),
-        $template: $('#template-dribbble')
-    });
-    PublishedArticles = new Section({
-        $target: $('#published-articles'),
-        $template: $('#template-published-articles')
-    });
-    SideProjects = new Section({
-        $target: $('#side-projects'),
-        $template: $('#template-side-projects')
-    });
+    this.render = function() {
+        var template = Handlebars.compile( this.$template.html() );
+        this.$target.html( template( this.data ) );
+    }
+};
 
 
-    //
-    //
-    //  Execute Ajax Calls
-    //
+//
+//
+//  Page Load
+//
+$(document).ready(function () {
 
     //
     //
@@ -52,32 +32,59 @@ $(document).ready(function () {
     //
     $.getJSON("http://dribbble.com/jimniels/shots.json?callback=?", function(data){
 
-        // Temp variable for trimming results down to two
-        var dataTmp = { shots: [] };
-        for($i=0;$i<2;$i++) {
-            dataTmp.shots.push( data.shots[$i] );
-        } 
-        Dribbble.data = dataTmp;
-        Dribbble.render();
+        Dribbble = new Section({
+            $target: $('#dribbble'),
+            $template: $('#template-dribbble'),
+            data: data.shots
+        });
 
+        // Trim API results down to two items
+        Dribbble.data.splice(2, Dribbble.data.length-2);
+
+        // Render the module
+        Dribbble.render();
     });
 
     //
     //
-    //  Published Articles
+    //  Side Projects & Published Articles
     //
-    $.getJSON('resources/json/published-articles.json', function(data){
-        PublishedArticles.data = data;
+    $.getJSON('resources/json/data.json', function(data){
+        
+        PublishedArticles = new Section({
+            $target: $('#published-articles'),
+            $template: $('#template-published-articles'),
+            data: data['published-articles']
+        });
+
+        SideProjects = new Section({
+            $target: $('#side-projects'),
+            $template: $('#template-side-projects'),
+            data: data['side-projects']
+        });
+
+        // Render the modules
+        SideProjects.render();
         PublishedArticles.render();
     });
 
     //
     //
-    //  Side Projects
+    //  Scriptogram
     //
-    $.getJSON('resources/json/side-projects.json', function(data){
-        SideProjects.data = data;
-        SideProjects.render();
+    $.getJSON('resources/get-scriptogram.php', function(data){
+        
+        Scriptogram = new Section({
+            $target: $('#scriptogram'),
+            $template: $('#template-scriptogram'),
+            data: data.channel.item
+        });
+
+        // Trim results down to four
+        Scriptogram.data.splice(5, Scriptogram.data.length - 5 );
+
+        // Render the modules
+        Scriptogram.render();
     });
         
 });
@@ -87,13 +94,39 @@ $(document).ready(function () {
 
 //
 //
-//  Filenameify
+//  Handlebar Helpers
 //
+
+// Convert to filename
 Handlebars.registerHelper('filenameify', function(title) {
-  return title.replace(/ +/g, '-').toLowerCase();
+    return title.replace(/ +/g, '-').toLowerCase();
+});
+
+// Make dates pretty - 4 January, 2013
+Handlebars.registerHelper('prettyDate', function(date) {
+    var d = new Date(date);
+    var months = [ 
+        "January", 
+        "February", 
+        "March", 
+        "April", 
+        "May", 
+        "June",
+        "July", 
+        "August", 
+        "September", 
+        "October", 
+        "November",
+        "December"
+    ];
+    return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 });
 
 
+//
+//
+//  Scriptogram Stuff
+//
 /* creates a feed instance and loads the feed */
 function OnLoad() {
     var feed = new google.feeds.Feed("http://scriptogr.am/jimniels/feed/");

@@ -10,7 +10,6 @@ function get_scriptogram_JSON() {
 
     $simpleXml = simplexml_load_string($fileContents);
 
-    echo $simpleXml;
     $json = json_encode($simpleXml);
     return $json;
 }

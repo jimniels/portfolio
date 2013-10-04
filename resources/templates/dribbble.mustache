@@ -1,0 +1,17 @@
+{{#shots}}
+    <li class="l-col">
+        <a href="{{url}}">
+            <img src="
+                {{#image_400_url}}
+                    {{image_400_url}}
+                {{/image_400_url}}
+                {{^image_400_url}}
+                    {{image_url}}
+                {{/image_400_url}}" 
+                alt="{{title}}" 
+                title="{{title}} on Dribbble" 
+                width="400" 
+                height="300" />
+        </a>
+    </li>
+{{/shots}}

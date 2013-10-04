@@ -421,6 +421,7 @@ img.loading {
   top: -1px;
   padding-top: 1em;
   color: #333;
+  font-weight: 700;
 }
 @media screen and (max-width: 800px) {
   /* line 14, sass/_section.scss */
@@ -432,27 +433,24 @@ img.loading {
     padding: 0 0 1em 0;
   }
 }
-/* line 29, sass/_section.scss */
-.section__header h1 {
-  font-weight: 700;
-  margin-top: .3125em;
-}
-/* line 34, sass/_section.scss */
-.section__header .icon:before {
-  font-size: 1.5em;
+/* line 30, sass/_section.scss */
+.section__header.icon:before {
+  font-size: 1.325em;
   margin-right: .25em;
   position: relative;
   top: .15em;
 }
 
-/* line 42, sass/_section.scss */
+/* line 38, sass/_section.scss */
 .section__content {
   padding-top: 1.325em;
   margin-bottom: 2em;
 }
-/* line 46, sass/_section.scss */
+/* line 42, sass/_section.scss */
 .section__content li {
   margin-bottom: 1em;
+  clear: both;
+  overflow: hidden;
 }
 
 /* line 5, sass/_side-projects.scss */

@@ -17,6 +17,7 @@
     top: -1px;
     padding-top: 1em;
     color: #333;
+    font-weight: 700;
 
     @media screen and (max-width: 800px) {
         position: absolute;
@@ -26,13 +27,8 @@
         padding: 0 0 1em 0;
     }
 
-    h1 {
-        font-weight: 700;
-        margin-top: .3125em;
-    }
-
-    .icon:before {
-        font-size: 1.5em;
+    &.icon:before {
+        font-size: 1.325em;
         margin-right: .25em;
         position: relative;
         top: .15em;
@@ -45,5 +41,7 @@
 
     li {
         margin-bottom: 1em;
+        clear: both;
+        overflow: hidden;
     }
 }

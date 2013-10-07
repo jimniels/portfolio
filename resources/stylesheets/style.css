@@ -159,53 +159,54 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   background: #292929;
   font: 1em/1.25 "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #222222;
 }
 
-/* line 14, sass/_general.scss */
+/* line 15, sass/_general.scss */
 a {
   text-decoration: none;
   color: inherit;
 }
-/* line 18, sass/_general.scss */
+/* line 19, sass/_general.scss */
 a:hover {
   color: #c02702;
   text-decoration: underline;
 }
 
-/* line 24, sass/_general.scss */
+/* line 25, sass/_general.scss */
 img {
   max-width: 100%;
   height: auto;
 }
-/* line 28, sass/_general.scss */
+/* line 29, sass/_general.scss */
 img.loading {
   position: relative;
   top: .325em;
   margin-right: .325em;
 }
 
-/* line 36, sass/_general.scss */
+/* line 37, sass/_general.scss */
 .meta {
   font-size: 0.75em;
   color: #999;
 }
 
-/* line 41, sass/_general.scss */
+/* line 42, sass/_general.scss */
 .block {
   display: block;
 }
 
-/* line 45, sass/_general.scss */
+/* line 46, sass/_general.scss */
 .bold {
   font-weight: 700;
 }
 
-/* line 49, sass/_general.scss */
+/* line 50, sass/_general.scss */
 .highlight {
   color: #c02702;
 }
 
-/* line 53, sass/_general.scss */
+/* line 54, sass/_general.scss */
 .clearfix {
   overflow: hidden;
   *zoom: 1;
@@ -266,21 +267,34 @@ img.loading {
 }
 
 /* line 38, sass/_layout.scss */
-.l-col {
+.l-col-left {
   width: 46%;
-  margin-right: 2%;
   float: left;
 }
 @media screen and (max-width: 800px) {
   /* line 38, sass/_layout.scss */
-  .l-col {
+  .l-col-left {
     width: 100%;
     margin: 0;
     float: none;
   }
 }
 
-/* line 52, sass/_layout.scss */
+/* line 49, sass/_layout.scss */
+.l-col-right {
+  width: 46%;
+  float: right;
+}
+@media screen and (max-width: 800px) {
+  /* line 49, sass/_layout.scss */
+  .l-col-right {
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
+}
+
+/* line 62, sass/_layout.scss */
 .main {
   background: white;
   margin: 3em auto 0em;
@@ -290,35 +304,35 @@ img.loading {
   box-shadow: 0 0 130px black;
 }
 @media screen and (max-width: 800px) {
-  /* line 52, sass/_layout.scss */
+  /* line 62, sass/_layout.scss */
   .main {
     margin-top: 1.5em;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 52, sass/_layout.scss */
+  /* line 62, sass/_layout.scss */
   .main {
     margin-top: 0;
   }
 }
 
-/* line 67, sass/_layout.scss */
+/* line 77, sass/_layout.scss */
 .footer {
   color: #777;
   margin-bottom: 4em;
   padding-top: .5em;
 }
-/* line 72, sass/_layout.scss */
+/* line 82, sass/_layout.scss */
 .footer .left {
   float: left;
 }
-/* line 75, sass/_layout.scss */
+/* line 85, sass/_layout.scss */
 .footer .right {
   float: right;
   text-align: right;
 }
 @media screen and (max-width: 600px) {
-  /* line 81, sass/_layout.scss */
+  /* line 91, sass/_layout.scss */
   .footer .left,
   .footer .right {
     float: none;
@@ -427,7 +441,7 @@ img.loading {
   /* line 14, sass/_section.scss */
   .section__header {
     position: absolute;
-    top: -3em;
+    top: -2.5em;
     border-top: 0;
     border-bottom: 2px solid #333;
     padding: 0 0 1em 0;
@@ -447,10 +461,40 @@ img.loading {
   margin-bottom: 2em;
 }
 /* line 42, sass/_section.scss */
-.section__content li {
+.section__content > li {
   margin-bottom: 1em;
-  clear: both;
   overflow: hidden;
+}
+/* line 50, sass/_section.scss */
+#dribbble .section__content li:nth-child(odd) {
+  width: 48%;
+  float: left;
+}
+/* line 54, sass/_section.scss */
+#dribbble .section__content li:nth-child(even) {
+  width: 48%;
+  float: right;
+}
+
+/* line 64, sass/_section.scss */
+#published-articles .meta li {
+  float: left;
+  margin-right: .825em;
+}
+/* line 68, sass/_section.scss */
+#published-articles .meta li:after {
+  content: '\00B7';
+  margin-left: .825em;
+  color: #ccc;
+}
+/* line 74, sass/_section.scss */
+#published-articles .meta li:last-child {
+  margin-right: 0;
+}
+/* line 77, sass/_section.scss */
+#published-articles .meta li:last-child:after {
+  content: '';
+  margin-left: 0;
 }
 
 /* line 5, sass/_side-projects.scss */
@@ -497,11 +541,11 @@ img.loading {
   font-size: 0.88889em;
 }
 
-/* line 44, sass/_side-projects.scss */
+/* line 45, sass/_side-projects.scss */
 .readers-fav {
   white-space: pre;
-  color: #c02702;
-  background-color: rgba(192, 39, 2, 0.1);
-  padding: 0 .25em;
+  color: white;
+  background: #222222;
+  padding: 0 .325em;
   border-radius: 2px;
 }

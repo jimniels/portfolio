@@ -14,21 +14,48 @@ function getScriptogramJSON() {
     return $json;
 }
 
-// verify the data
-$data = json_decode(getScriptogramJSON(), true);
+function getDribbbleJSON() {
+    $username = 'jimniels';
+    $url = 'http://dribbble.com/'.$username.'/shots.json';
+    $json = file_get_contents($url);
+    return $json;
+}
 
-// write the data to cache file
-if ( $data['channel']['item'][0]['title'] != '' || $data['channel']['item'][0]['title'] != null) {
+// verify the data
+$sriptogram = json_decode(getScriptogramJSON(), true);
+$dribbble = json_decode(getDribbbleJSON(), true);
+
+// Verify and write Scriptogram
+if ( $sriptogram['channel']['item'][0]['title'] != '' || $sriptogram['channel']['item'][0]['title'] != null) {
     
     $file = dirname(__FILE__) . '/json/scriptogram.json';
 
     if ( file_exists($file) ) {
-        $f = file_put_contents($file, json_encode($data) );
+        $f = file_put_contents($file, json_encode($sriptogram) );
         if($f) {
-            echo 'File written! <br>';
-            echo json_encode($data);
+            echo '<p style="color: green;">Scriptogram written to cache!</p>';
+            echo json_encode($sriptogram);
         }
     } else {
-        echo 'file does not exists';
+        echo '<p style="color:red">Could not get/write scriptogram cache file.</p>';
     }
+} else {
+    echo '<p style="color:red">Scriptogram data could not be verified.</p>';   
+}
+
+// Verify and write Dribbble
+if ( $dribbble['shots'][0]['title'] != '' || $dribbble['shots'][0]['title'] != null) {
+    $file = dirname(__FILE__) . '/json/dribbble.json';
+
+    if ( file_exists($file) ) {
+        $f = file_put_contents($file, json_encode($dribbble) );
+        if($f) {
+            echo '<p style="color: green;">Dribbble written to cache!</p>';
+            echo json_encode($dribbble);
+        }
+    } else {
+        echo '<p style="color:red">Could not get/write dribbble cache file.</p>';
+    }
+} else {
+    echo '<p style="color:red">Scriptogram data could not be verified.</p>';   
 }

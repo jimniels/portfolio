@@ -41,10 +41,12 @@
         font-size: #{$font-size-base / 18}em;
     }
 }
+
 .readers-fav {
     white-space: pre;
-    color: $color-highlight;
-    background-color: rgba($color-highlight, .1);
-    padding: 0 .25em;
+    color: white;
+    //background-color: rgba($color-highlight, .1);
+    background: $color-text;
+    padding: 0 .325em;
     border-radius: 2px;
 }

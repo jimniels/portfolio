@@ -35,10 +35,20 @@
     }
 }
 
-.l-col {
+.l-col-left {
     width: 46%;
-    margin-right: 2%;
+    //margin-right: 2%;
     float: left;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+}
+.l-col-right {
+    width: 46%;
+    float: right;
 
     @media screen and (max-width: 800px) {
         width: 100%;

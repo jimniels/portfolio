@@ -1,17 +1,18 @@
 {{#recent-projects}}
     <li>
-        <a href="{{link}}" class="l-col">
-            <img src="resources/images/{{title}}.png" width="400" height="300" />
+        <a href="{{link}}" class="l-col-left">
+            <img src="resources/images/{{id}}.png" width="400" height="300" />
         </a>
-        <div class="l-col">
-            <a href="{{link}}">
-                <h2 class="bold">{{title}}</h2>
-                <span class="meta">{{link-pretty}}</span>
-            </a>
-            <p>{{description}}</p>
+
+        <ul class="l-col-right">
+            <li><a href="{{link}}" class="bold">{{title}}</a></li>
+            
+            <li class="meta">{{description}}</li>
+            
             {{#cta}}
-                <p><a href="{{cta}}" class="highlight">Project overview &raquo;</a></p>
+                <li style="margin-top: 1em"><a href="{{cta}}" class="highlight">Project overview &raquo;</a></li>
             {{/cta}}
-        </a>
+        </ul>
+        
     </li>
 {{/recent-projects}}

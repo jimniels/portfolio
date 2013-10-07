@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<?php header('Content-type: text/html; charset=UTF-8'); ?><!DOCTYPE html>
 <html lang="en">
 <head>
 
     <!-- Basic Page Needs
     ================================================== -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <title>Jim Nielsen, Designer</title>
     <meta name="description" content="Jim Nielsen, a web and graphic designer currently living and working in NYC">
     <meta name="author" content="Jim Nielsen">
@@ -22,7 +22,7 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -63,23 +63,22 @@
                         $this->iconClass = $id;
                         $this->data = json_decode(file_get_contents(dirname(__FILE__).'/resources/json/'. $this->id .'.json'), true);
 
-                        // Custom for each
+                        // Massage the data we need for output
                         if($this->id == 'scriptogram') {
                             $this->data = $this->data['channel'];
                             $this->name = 'Blog';
 
-                            // Trim
-                            $length = count($this->data['item']);
-                            for($i=0; $i<$length-4; $i++) {
-                                array_pop($this->data['item']);
+                            // Trim down results
+                            $this->data['item'] = array_slice($this->data['item'], 0, 5);
+
+                            // Format dates
+                            for($i=0; $i<count($this->data['item']); $i++) {
+                                $this->data['item'][$i]['pubDate'] = date("M j, Y", strtotime($this->data['item'][$i]['pubDate']) );
                             }
 
                         } elseif($this->id == 'dribbble') {
                             // Trim
-                            $length = count($this->data['shots']);
-                            for($i=0; $i<$length-2; $i++) {
-                                array_pop($this->data['shots']);
-                            }
+                            $this->data['shots'] = array_slice($this->data['shots'], 0, 2);
                         } elseif($this->id == 'published-articles') {
                             // nothing?
                         } elseif($this->id == 'recent-projects') {
@@ -102,7 +101,7 @@
 
                         <article class="section" id="<?php echo $Section->id ?>">
                             <h1 class="l-left section__header icon icon-<?php echo $Section->iconClass ?>">
-                                <?php echo $Section->id ?>
+                                <?php echo  ucwords(str_replace('-', ' ', $Section->id) ) ?>
                             </h1>
                             <ul class="l-right section__content">
                                 <?php echo $mustache->render($Section->id, $Section->data); ?>

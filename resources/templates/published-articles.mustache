@@ -1,12 +1,12 @@
 {{#published-articles}}
     <li>
-        <h2><a href="{{link}}">{{title}}</a></h2>
-        <p class="meta">
-            <span>{{publisher}}</span> &middot;
-            <time>{{publish-date}}</time>
+        <a href="{{link}}">{{title}}</a>
+        <ul class="meta">
+            <li class="publisher">{{publisher}}</li>
+            <li class="publish-date">{{publish-date}}</li>
             {{#reader-fav}}
-                &middot; <span class="readers-fav">readers’ fav</span>
+                <li class="readers-fav">readers’ fav</li>
             {{/reader-fav}}
-        </p>
+        </ul>
     </li>
 {{/published-articles}}

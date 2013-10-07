@@ -21,7 +21,7 @@
 
     @media screen and (max-width: 800px) {
         position: absolute;
-        top: -3em;
+        top: -2.5em;
         border-top: 0;
         border-bottom: 2px solid #333;
         padding: 0 0 1em 0;
@@ -39,9 +39,46 @@
     padding-top: 1.325em;
     margin-bottom: 2em;
 
-    li {
+    > li {
         margin-bottom: 1em;
-        clear: both;
         overflow: hidden;
+    }
+
+    // Dribble List
+    #dribbble & {
+        li {
+            &:nth-child(odd) {
+                width: 48%;
+                float: left;
+            }
+            &:nth-child(even) {
+                width: 48%;
+                float: right;
+            }
+        }
+    }
+}
+
+.meta {
+    #published-articles & {
+        li {
+            float: left;
+            margin-right: .825em;
+
+            &:after {
+                content: '\00B7';
+                margin-left: .825em;
+                color: #ccc;
+            }
+
+            &:last-child {
+                margin-right: 0;
+                
+                &:after {
+                    content: '';
+                    margin-left: 0;
+                }
+            }
+        }
     }
 }

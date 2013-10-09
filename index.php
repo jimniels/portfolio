@@ -117,8 +117,7 @@
     </div>
 
     <footer class="l-wrapper footer">
-        <p class="left"><a href="mailto:jimniels@gmail.com">jimniels@gmail.com</a></p>
-        <p class="right"><a href="http://twitter.com/jimniels">@jimniels</a></p>
+        <p>If you want to contact me, you can email me <a href="mailto:jimniels@gmail.com">jimniels@gmail.com</a> or find me on twitter <a href="http://twitter.com/jimniels">@jimniels</a></p>
     </footer>
 
 </body>

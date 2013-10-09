@@ -316,29 +316,20 @@ img.loading {
   }
 }
 
-/* line 77, sass/_layout.scss */
+/* line 78, sass/_layout.scss */
 .footer {
   color: #777;
   margin-bottom: 4em;
   padding-top: .5em;
+  text-align: center;
 }
-/* line 82, sass/_layout.scss */
-.footer .left {
-  float: left;
+/* line 84, sass/_layout.scss */
+.footer a {
+  color: #c02702;
 }
-/* line 85, sass/_layout.scss */
-.footer .right {
-  float: right;
-  text-align: right;
-}
-@media screen and (max-width: 600px) {
-  /* line 91, sass/_layout.scss */
-  .footer .left,
-  .footer .right {
-    float: none;
-    text-align: left;
-    padding: .5em 0;
-  }
+/* line 87, sass/_layout.scss */
+.footer a:hover {
+  color: #e82f02;
 }
 
 /* line 1, sass/_header.scss */
@@ -459,39 +450,51 @@ img.loading {
 .section__content {
   padding-top: 1.325em;
   margin-bottom: 2em;
+  overflow: hidden;
 }
-/* line 42, sass/_section.scss */
+/* line 43, sass/_section.scss */
 .section__content > li {
   margin-bottom: 1em;
   overflow: hidden;
 }
-/* line 50, sass/_section.scss */
+/* line 51, sass/_section.scss */
 #dribbble .section__content li:nth-child(odd) {
   width: 48%;
   float: left;
 }
-/* line 54, sass/_section.scss */
+/* line 55, sass/_section.scss */
 #dribbble .section__content li:nth-child(even) {
   width: 48%;
   float: right;
 }
+@media screen and (max-width: 650px) {
+  /* line 50, sass/_section.scss */
+  #dribbble .section__content li {
+    float: none !important;
+    width: 100% !important;
+  }
+}
+/* line 69, sass/_section.scss */
+#recent-projects .section__content > li {
+  margin-bottom: 2em;
+}
 
-/* line 64, sass/_section.scss */
+/* line 77, sass/_section.scss */
 #published-articles .meta li {
   float: left;
   margin-right: .825em;
 }
-/* line 68, sass/_section.scss */
+/* line 81, sass/_section.scss */
 #published-articles .meta li:after {
   content: '\00B7';
   margin-left: .825em;
   color: #ccc;
 }
-/* line 74, sass/_section.scss */
+/* line 87, sass/_section.scss */
 #published-articles .meta li:last-child {
   margin-right: 0;
 }
-/* line 77, sass/_section.scss */
+/* line 90, sass/_section.scss */
 #published-articles .meta li:last-child:after {
   content: '';
   margin-left: 0;

@@ -74,25 +74,18 @@
     }
 
 }
+
 .footer {
     color: #777;
     margin-bottom: 4em;
     padding-top: .5em;
+    text-align: center;
 
-    .left {
-        float: left;
-    }
-    .right {
-        float: right;
-        text-align: right;
-    }
+    a {
+        color: $color-highlight;
 
-    .left,
-    .right {
-        @media screen and (max-width: 600px) {
-            float: none;
-            text-align: left;
-            padding: .5em 0;
+        &:hover {
+            color: lighten($color-highlight, 8%);
         }
     }
 }

@@ -5,21 +5,22 @@
             "title":            "Kindlingapp",
             "link":             "http://kindlingapp.com",
             "link-pretty":      "kindlingapp.com",
-            "description":      "Design I did running on wordpress showcasing Kindling, a platform for discovering, sharing, and actualizing ideas."
+            "description":      "Design I did running on wordpress showcasing Kindling, a platform for discovering, sharing, and actualizing ideas.",
+            "cta":              "http://scriptogr.am/jimniels/post/home-page-redesign-of-kindlingapp.com"
         },
         {
             "id":               "ios-icon-gallery",
             "title":            "iOS Icon Gallery",
             "link":             "http://iosicongallery.com",
             "link-pretty":      "iosicongallery.com",
-            "description":      "Designed and curated by me, this is a gallery showcasing great icon designs from the iOS ecosystem."
+            "description":      "A gallery showcasing great icon designs from the iOS ecosystem. Designed and curated by me."
         },
         {
             "id":               "kindling-loves-startups",
             "title":            "Kindling Loves Startups",
             "link":             "http://kindlinglovesstartups.com",
             "link-pretty":      "kindlinglovesstartups.com",
-            "description":      "Landing page design for Kindling. Part of a campaign offering free Kindling for free to qualifying startups."
+            "description":      "Landing page design for Kindling. Part of a campaign offering Kindling for free to qualifying startups."
         },
         {
             "id":               "sassme",
@@ -33,7 +34,7 @@
             "title":            "Mac Icon Gallery",
             "link":             "http://macicongallery.com",
             "link-pretty":      "macicongallery.com",
-            "description":      "Designed and curated by me, this is a gallery showcasing great icon designs from the Mac App Store."
+            "description":      "A gallery showcasing great icon designs from the Mac App Store. Designed and curated by me."
         },
         {
             "id":               "team-colors",

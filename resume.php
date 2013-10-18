@@ -3,6 +3,8 @@ $recentProjects = json_decode( file_get_contents(dirname(__FILE__).'/resources/j
 $recentProjects = $recentProjects['recent-projects'];
 $publishedArticles = json_decode( file_get_contents(dirname(__FILE__).'/resources/json/published-articles.json'), true );
 $publishedArticles = $publishedArticles['published-articles'];
+$blogPosts = json_decode( file_get_contents(dirname(__FILE__).'/resources/json/scriptogram.json'), true );
+$blogPosts = $blogPosts['channel']['item'];
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,22 +21,24 @@ $publishedArticles = $publishedArticles['published-articles'];
         body {white-space: pre; font-family: monospace}
         a {color: inherit;}
         a:hover {color: #c02702;}
+        .highlight {color: #c02702;}
+        strong {font-weight: 700;}
     </style>
 
 </head>
 
 <body>{
-    "<strong style="color: #c02702;">person-you-should-hire</strong>" : {
-        "name":             "<strong>Jim Nielsen</strong>",
+    "<strong class="highlight">person-you-should-hire</strong>" : {
+        "name":             "<strong class="highlight">Jim Nielsen</strong>",
         "title":            "Web Designer",
         "twitter-url":      "<a href="http://twitter.com/jimniels">http://twitter.com/jimniels</a>",
         "dribbble-url":     "<a href="http://dribbble.com/jimniels">http://dribbble.com/jimniels</a>",
         "blog-url":         "<a href="http://scriptogr.am/jimniels">http://scriptogr.am/jimniels</a>",
     
-        "recent-projects": [ <?php foreach ($recentProjects as $index => $project) {
+        "<strong>recent-projects</strong>": [ <?php foreach ($recentProjects as $index => $project) {
             echo '
             {
-                "title":            "'.$project['title'].'",
+                "title":            "<strong>'.$project['title'].'</strong>",
                 "link":             "<a href="'.$project['link'].'">'.$project['link'].'</a>",
                 "description":      "'.$project['description'].'"'; if($project['cta']) { echo ',
                 "case-study":       "<a href="'.$project['cta'].'">'.$project['cta'].'</a>"';
@@ -43,10 +47,10 @@ $publishedArticles = $publishedArticles['published-articles'];
 
         ],
 
-        "published-articles": [ <?php foreach ($publishedArticles as $index => $article) {
+        "<strong>published-articles</strong>": [ <?php foreach ($publishedArticles as $index => $article) {
             echo '
             {
-                "title":            "'.$article['title'].'",
+                "title":            "<strong>'.$article['title'].'</strong>",
                 "publisher":        "'.$article['publisher'].'",
                 "publish-date":     "'.$article['publish-date'].'",
                 "link":             "<a href="'.$article['link'].'">'.$article['link'].'</a>",
@@ -54,6 +58,17 @@ $publishedArticles = $publishedArticles['published-articles'];
             echo '
             }'; if($index != count($publishedArticles)-1) {echo ',';}; }?>
         
+        ]
+
+        "<strong>blog-posts</strong>": [ <?php foreach ($blogPosts as $index => $post) {
+            echo '
+            {
+                "title":            "<strong>'.$post['title'].'</strong>",
+                "publish-date":     "'.$post['pubDate'].'",
+                "link":             "<a href="'.$post['link'].'">'.$post['link'].'</a>"';
+            echo '
+            }'; if($index != count($blogPosts)-1) {echo ',';}; }?>
+
         ]
     }
 }</body>

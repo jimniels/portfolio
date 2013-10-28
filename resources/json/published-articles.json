@@ -1,13 +1,72 @@
 {
     "published-articles": [
         {
+            "title":            "Implementing the Float Label Form Pattern",
+            "publisher":        "webdesign tuts+",
+            "publisher-link":   "http://webdesign.tutsplus.com/",
+            "publish-date":     "Oct 28, 2013",
+            "date":             1382918400,
+            "link":             "http://webdesign.tutsplus.com/tutorials/ux-tutorials/implementing-the-float-label-form-pattern/",
+            "excerpt":          "A multiplicity of form accessibility concerns and best practices can make designing a compelling form interaction very difficult. Using Matt Smith’s mobile form interaction design as a guide, we will create a stunning form interaction for the web that’s beautiful, accessible, and progressively enhanced using HTML, CSS and JavaScript.",
+            "tweets": [
+                {
+                    "url":      "https://twitter.com/CodeRanger/status/394874441705869312",
+                    "id":       "394874441705869312",
+                    "text":     "Brilliant ux for form fields: Implementing the Float Label Form Pattern http://dev.tutsplus.com/tutorials/implementing-the-float-label-form-pattern--webdesign-16407"
+                }
+            ]
+        },
+        {
             "title":            "Quick Tip: Name Your SASS Variables Modularly",
             "publisher":        "webdesign tuts+",
             "publisher-link":   "http://webdesign.tutsplus.com/",
             "publish-date":     "Jul 2, 2013",
             "date":             1372723200,
             "link":             "http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/",
-            "excerpt":          "You should think about organizing your variable names (and project for that matter) modularly. This will bring structure and unity to your project as a whole, making it easier to understand and navigate the whole thing."
+            "excerpt":          "You should think about organizing your variable names (and project for that matter) modularly. This will bring structure and unity to your project as a whole, making it easier to understand and navigate the whole thing.",
+            "tweets": [
+                {
+                    "url":      "https://twitter.com/christiannaths/status/362336869263998977",
+                    "text":     "Two great articles to strengthen your Sass variable names: http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-name-your-sass-variables-modularly/ … http://sachagreif.com/sass-color-variables/ … (℅ @SachaGreif / @wdtuts)"
+                },
+                {
+                    "url":       "https://twitter.com/TJacobDesign/status/360807524699607040",
+                    "text":     "Naming conventions for Sass. I don’t generally use many variables, but tips anyway - http://bit.ly/1aLztuC"
+                },
+                {
+                    "url":      "https://twitter.com/csswizardry/status/354547144172126209",
+                    "starred":  true
+                },
+                {
+                    "url":      "https://twitter.com/stefsull/status/355042505940668420",
+                    "text":     "Nice little tip on naming your Sass variables. http://srewis.me/15wKgHU  Much of it is similar to what I do. Good ideas."
+                },
+                {
+                    "url":      "https://twitter.com/simonbingham/status/354831262277566464",
+                    "text":     "A good approach to naming SASS variables -  http://pocket.co/sr61y"
+                },
+                {
+                    "url":      "https://twitter.com/shawndmann/status/354637443242278912",
+                    "text":     "Great tips for working in SASS - Name Your SASS Variables Modularly: http://ow.ly/mNm3W"
+                },
+                {
+                    "url":      "https://twitter.com/joshbroton/status/353363447095898116",
+                    "text":     "I agree with this @nettuts article 100%. Name your Sass variables general -> specific. http://bit.ly/128yjaq  #maintainability"
+                },
+                {
+                    "url":      "https://twitter.com/chriscoyier/status/353154441660211201",
+                    "starred":  true
+                },
+                {
+                    "url":      "https://twitter.com/ManikRathee/status/353264590303399938",
+                    "text":     "Generic to Specific Sass naming convetion  —  http://bit.ly/18BAIyu",
+                    "starred":  true
+                },
+                {
+                    "url":      "https://twitter.com/philippebarbosa/status/352148164242972672",
+                    "text":     "A quick but great read : Name Your SASS Variables Modularly • http://hub.tutsplus.com/tutorials/quick-tip-name-your-sass-variables-modularly--webdesign-13364 #css #sass"
+                }
+            ]
         },
         {
             "title":            "Filler Content: Tools, Tips and a Dynamic Example",
@@ -35,7 +94,48 @@
             "date":             1357084800,
             "link":             "http://webdesign.tutsplus.com/tutorials/site-elements/bring-your-forms-up-to-date-with-css3-and-html5-validation/",
             "reader-fav":       true,
-            "excerpt":          "Let’s look at how to create a functional form which validates users’ data, client-side. With that done, we’ll cover prettying it up using CSS, including some CSS3!"
+            "excerpt":          "Let’s look at how to create a functional form which validates users’ data, client-side. With that done, we’ll cover prettying it up using CSS, including some CSS3!",
+            "tweets": [
+                {
+                    "url":      "https://twitter.com/rabbitscarrots/status/286466551052394496",
+                    "text":     "good tutorial! thanks a bunches RT: @wdtuts: Bring Your Forms Up to Date With CSS3 and HTML5 Validation http://enva.to/tptA10"
+                },
+                {
+                    "url":      "https://twitter.com/amit_tushar/status/189272101008588801",
+                    "text":     "@nikhilkarmokar I love these validations: http://webdesign.tutsplus.com/tutorials/site-elements/bring-your-forms-up-to-date-with-css3-and-html5-validation/"
+                },
+                {
+                    "url":      "https://twitter.com/Jack_Franklin/status/147002915519868928",
+                    "text":     "Newly bookmarked: Bring Your Forms Up to Date With CSS3 and HTML5 Validation http://bit.ly/vzlYeF"
+                },
+                {
+                    "url":      "https://twitter.com/Dgotty/status/146615507196444674",
+                    "text":     "Amazing tutorial http://webdesign.tutsplus.com/tutorials/site-elements/bring-your-forms-up-to-date-with-css3-and-html5-validation/"
+                },
+                {
+                    "url":      "https://twitter.com/OOHology/status/137220160938459137",
+                    "text":     "A more pleasing form for your forms: RT @DesignerDepot Bring Your Forms Up to Date With CSS3 & #HTML5 Validation - http://ow.ly/7wgur"
+                },
+                {
+                    "url":      "https://twitter.com/Mut1ey/status/137221369837527040",
+                    "text":     "*Very* informative breakdown indeed: RT @DesignerDepot: Bring Your Forms Up to Date With CSS3 and #HTML5 Validation - http://ow.ly/7wgur"
+                },
+                {
+                    "url":      "https://twitter.com/seanm297/status/135697659896926209",
+                    "text":     "Working on a redesign of my website today, including implementing the functionality showcased in this tutorial: http://webdesign.tutsplus.com/tutorials/site-elements/bring-your-forms-up-to-date-with-css3-and-html5-validation/",
+                    "starred":  true
+                },
+                {
+                    "url":      "https://twitter.com/Twikito/status/132386723266174977",
+                    "text":     "Useful! — Bring Your Forms Up to Date With CSS3 and HTML5 Validation http://bit.ly/tbYEyA  #HTML5 #CSS3",
+                    "starred":  true
+                },
+                {
+                    "url":      "https://twitter.com/DesignerDepot/status/137205950602952704",
+                    "text":     "Bring Your Forms Up to Date With CSS3 and #HTML5 Validation - http://ow.ly/7wgur",
+                    "starred":  true
+                }
+            ]
         },
         {
             "title":            "Don’t Forget the optgroup Element",
@@ -44,7 +144,13 @@
             "publish-date":     "Dec. 27, 2012",
             "date":             1356566400,
             "link":             "http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-optgroup-element/",
-            "excerpt":          "One popular navigation design pattern for the responsive web is collapsing your website’s navigation into a select menu. However, representing hierarchy or categorical distinctions in select elements often leads to butchered HTML with manual hyphens and lots of &nbsp; spaces. In this tutorial we’ll introduce you to a somehwat obscure HTML tag called optgroup which will provide you with an easy (and semantic) way of grouping related content in select menus."
+            "excerpt":          "One popular navigation design pattern for the responsive web is collapsing your website’s navigation into a select menu. However, representing hierarchy or categorical distinctions in select elements often leads to butchered HTML with manual hyphens and lots of &nbsp; spaces. In this tutorial we’ll introduce you to a somehwat obscure HTML tag called optgroup which will provide you with an easy (and semantic) way of grouping related content in select menus.",
+            "tweets": [
+                {
+                    "url":      "https://twitter.com/rsturim/status/284587477233201152",
+                    "text":     "Sometimes it's easy to forgot the basic stuff is often the best solution: Quick Tip: Don’t Forget the optgroup Element http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-optgroup-element/"
+                }
+            ]
         },
         {
             "title":            "Everything You Need to Know About the CSS Cursor Rule",

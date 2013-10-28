@@ -6,7 +6,17 @@
             "link":             "http://kindlingapp.com",
             "link-pretty":      "kindlingapp.com",
             "description":      "As design lead at Kindling, I did this site redesign showcasing Kindling as a platform for discovering, sharing, and actualizing ideas.",
-            "cta":              "http://scriptogr.am/jimniels/post/home-page-redesign-of-kindlingapp.com"
+            "cta":              "http://scriptogr.am/jimniels/post/home-page-redesign-of-kindlingapp.com",
+            "tweets": [
+                {
+                    "url":      "https://twitter.com/richziade/status/358225234819694592",
+                    "text":     "Yeh I'm biased, but the attention to design details by the @kindlingapp team is really damn impressive. Great update. http://www.kindlingapp.com/blog/in-app-notifications/"
+                },
+                {
+                    "url":      "https://twitter.com/timothymeaney/status/103974927253782529",
+                    "text":     "Mission Accomplished. A prospect just said that they love @kindlingapp for its design & that a competitor \"was obv. designed by engineers\"."
+                }
+            ]
         },
         {
             "id":               "ios-icon-gallery",

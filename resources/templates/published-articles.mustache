@@ -14,11 +14,11 @@
             {{#tweets}}
                 <li class="tweet">
                     <span class="icon-twitter"></span>
-                    <a href="http://twitter.com/{{screen-name}}/statuses/{{id}}" class="tweet-permalink">
-                        <span class="tweet-author-name">{{author-name}}</span>
-                        <span class="tweet-screen-name">@{{screen-name}}</span>
+                    <a href="{{url}}" class="tweet-permalink">
+                        <span class="tweet-author-name">{{author_name}}</span>
+                        <span class="tweet-screen-name">@{{#getScreenName}}{{{author_url}}}{{/getScreenName}}</span>
                     </a>
-                    <p class="tweet-html">{{{html}}}</p>
+                    <p class="tweet-html">{{#getTweet}}{{{html}}}{{/getTweet}}</p>
                 </li>
             {{/tweets}}
         </ul>

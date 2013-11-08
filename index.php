@@ -41,18 +41,45 @@
         <section>
 
             <?php
+                // http://stackoverflow.com/questions/2087103/innerhtml-in-phps-domdocument
+                function DOMinnerHTML(DOMNode $element) { 
+                    $innerHTML = ""; 
+                    $children  = $element->childNodes;
 
+                    foreach ($children as $child) 
+                    { 
+                        $innerHTML .= $element->ownerDocument->saveHTML($child);
+                    }
+
+                    return $innerHTML; 
+                }
+                
                 // Initiate Mustache
                 require dirname(__FILE__).'/resources/mustache.php/src/Mustache/Autoloader.php';
                 Mustache_Autoloader::register();
+
+                
                 $mustache = new Mustache_Engine(array(
                     'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/resources/templates'),
                     'helpers' => array(
-                        "trim-tweets" => function($content) {
-                            return "<b>$content</b>";
+                        'getTweet' => function($data, Mustache_LambdaHelper $helper) {
+                            $html = $helper->render($data);
+
+                            $DOM = new DOMDocument;
+                            $DOM->loadHTML($html);
+                            $items = $DOM->getElementsByTagName('p');
+                            $item = $items->item(0);
+
+                            return DOMinnerHTML($item);
+                        },
+                        'getScreenName' => function($data, Mustache_LambdaHelper $helper) {
+                            $url = $helper->render($data);
+                            $url = explode('twitter.com/', $url);
+                            return $url[1];
                         }
                     ),
                 ));
+
 
                 // Setup Class for each section
                 class Section {

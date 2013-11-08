@@ -37,6 +37,7 @@ img {
 .meta {
     font-size: #{12 / $font-size-base}em;
     color: #999;
+    overflow: hidden;
 }
 
 .block {

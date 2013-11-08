@@ -62,3 +62,19 @@
         color: inherit;
     }
 }
+
+.header__developer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: #{6 / $font-size-base}em #{10 / $font-size-base}em;
+    background: $color-highlight;
+    color: white;
+    @include border-radius(0 3px 0 3px);
+    font-size: #{14 / $font-size-base}em;
+    font-family: monospace;
+
+    &:hover {
+        color: white;
+    }
+}

@@ -7,6 +7,21 @@
             {{#reader-fav}}
                 <li class="readers-fav">readers’ fav</li>
             {{/reader-fav}}
+
+            
         </ul>
+        <ul class="tweets">
+            {{#tweets}}
+                <li class="tweet">
+                    <span class="icon-twitter"></span>
+                    <a href="http://twitter.com/{{screen-name}}/statuses/{{id}}" class="tweet-permalink">
+                        <span class="tweet-author-name">{{author-name}}</span>
+                        <span class="tweet-screen-name">@{{screen-name}}</span>
+                    </a>
+                    <p class="tweet-html">{{{html}}}</p>
+                </li>
+            {{/tweets}}
+        </ul>
+
     </li>
 {{/published-articles}}

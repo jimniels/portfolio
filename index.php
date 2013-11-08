@@ -35,6 +35,7 @@
             <h1 class="header__logo"><a href="/">Jim Nielsen</a></h1>
             <h2 class="header__title">Web Designer. <em>Problem Solver.</em></h2>
             <h3 class="header__subtitle">Design Lead at <a href="http://kindlingapp.com">Kindling</a>, New York City</h3>
+            <a href="resume" class="header__developer">dev-friendly &raquo;</a>
         </header>
 
         <section>
@@ -46,6 +47,11 @@
                 Mustache_Autoloader::register();
                 $mustache = new Mustache_Engine(array(
                     'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/resources/templates'),
+                    'helpers' => array(
+                        "trim-tweets" => function($content) {
+                            return "<b>$content</b>";
+                        }
+                    ),
                 ));
 
                 // Setup Class for each section
@@ -80,10 +86,18 @@
                             // Trim
                             $this->data['shots'] = array_slice($this->data['shots'], 0, 2);
                         } elseif($this->id == 'published-articles') {
-                            // nothing?
+                            // Trim down tweets to one for templating
+                            for($i=0; $i<count($this->data['published-articles']); $i++) {
+                                // Get random number to pick random tweet
+                                $rand = rand(0, count($this->data['published-articles'][$i]['tweets']));
+                                // Trim down the tweets array
+                                $this->data['published-articles'][$i]['tweets'] = array_slice($this->data['published-articles'][$i]['tweets'], $rand-1, 1);
+                            }  
                         } elseif($this->id == 'recent-projects') {
                             $this->iconClass = 'hammer';
                         } 
+
+                        
                     }
                 }
 
@@ -119,6 +133,19 @@
     <footer class="l-wrapper footer">
         <p>If you want to contact me, you can email me <a href="mailto:jimniels@gmail.com">jimniels@gmail.com</a> or find me on twitter <a href="http://twitter.com/jimniels">@jimniels</a></p>
     </footer>
+
+    <!-- Tracking Code -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19579223-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 
 </body>
 </html>

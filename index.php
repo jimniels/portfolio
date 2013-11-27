@@ -140,11 +140,11 @@
                     $Section = new Section($id);
                     ?>
 
-                        <article class="section" id="<?php echo $Section->id ?>">
+                        <article class="section clearfix" id="<?php echo $Section->id ?>">
                             <h1 class="l-left section__header icon icon-<?php echo $Section->iconClass ?>">
                                 <?php echo  ucwords(str_replace('-', ' ', $Section->id) ) ?>
                             </h1>
-                            <ul class="l-right section__content">
+                            <ul class="l-right section__content <?php if($Section->id == 'dribbble'){echo 'clearfix';} ?>">
                                 <?php echo $mustache->render($Section->id, $Section->data); ?>
                             </ul>
                         </article>
@@ -153,7 +153,7 @@
                 }
             ?>
 
-            <div class="clearfix"></div>
+            <div class="clearfix">&nbsp;</div>
         </section>
     </div>
 

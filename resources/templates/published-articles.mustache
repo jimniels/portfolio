@@ -7,16 +7,12 @@
             {{#reader-fav}}
                 <li class="readers-fav">readers’ fav</li>
             {{/reader-fav}}
-
-            
         </ul>
         <ul class="tweets">
             {{#tweets}}
                 <li class="tweet">
-                    <span class="icon-twitter"></span>
                     <a href="{{url}}" class="tweet-permalink">
-                        <span class="tweet-author-name">{{author_name}}</span>
-                        <span class="tweet-screen-name">@{{#getScreenName}}{{{author_url}}}{{/getScreenName}}</span>
+                        <span class="icon-twitter"></span> <span class="tweet-author-name">{{author_name}}</span> <span class="tweet-screen-name">@{{#getScreenName}}{{{author_url}}}{{/getScreenName}}</span>
                     </a>
                     <p class="tweet-html">{{#getTweet}}{{{html}}}{{/getTweet}}</p>
                 </li>
